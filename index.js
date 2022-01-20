@@ -4,10 +4,10 @@ import db from "./config/database.js";
 const app = express();
 
 try {
-    await db.authenticate();
-    console.log('Database Connected');
+    db;
+    console.log('Connected');
 } catch (error) {
-    console.error('Connection error',error);
+    throw error;
 }
 
 app.get('/', (req,res) => {

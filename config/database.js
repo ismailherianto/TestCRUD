@@ -1,8 +1,10 @@
-import { Sequelize } from "sequelize/dist";
+import mysql from "mysql2";
 
-const db = new Sequelize('perpus','root','168168168kmg',{
-    host : "localhost",
-    dialect : "mysql"
-});
+const db = mysql.createConnection({
+    host : 'localhost',
+    user : 'root',
+    password : '168168168kmg',
+    database : 'perpus'
+})
 
-export default db;
+export default db.connect;
